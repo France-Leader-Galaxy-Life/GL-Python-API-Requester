@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gl-api"
+version = "1.0.."
+authors = [
+    { name="FL-GL", email="franceleadergl@gmail.com" }
+]
+description = "The Galaxy Life API requester."
+readme = "README.md"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+requires-python = ">=3.7"
+dependencies=[
+    "dacite", "requests"
+]
+
+[project.urls]
+"Homepage" = "https://github.com/France-Leader-Galaxy-Life/GL-Python-API-Requester"
