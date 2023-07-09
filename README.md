@@ -1,37 +1,41 @@
 # Installation
 
 ```
-pip install fl-api-requester
+pip install gl-api-requester
 ```
 
 # Usage
 
 ```python
-from fl_api_requester import *
-
-connection_data = FLAPIConnectionData()
-connection_data.api_uri = "http://localhost:8080"
-connection_data.set_credentials("username", "password")
+from gl_api_requester import *
 
 try:
-    api_requester = FLAPIRequester(connection_data)
+	api_requester = GLAPIRequester()
 
-    # Login
-    api_requester.login()
+	# Alliance request
+	requester.get_alliance(name="France Leader")
+	requester.get_alliance_warpoint_leaderboard()
 
-    # Get some data
-    player = api_requester.get_player("Galactifer")
-    alliance = api_requester.get_alliance("France Leader")
+	# Leaderboard request
+	requester.get_leaderboard_xp()
+	requester.get_leaderboard_xp_from_attack()
+	requester.get_leaderboard_rivals_wons()
+	requester.get_leaderboard_warpoint()
 
-    print(player)
-    print(alliance)
-    print(len(alliance.players))
+	# Status request
+	requester.get_status()
 
-    # Get a War attack
-    attack = api_requester.get_player_attacks("Galactifer")
+	# Users request
+	requester.get_user_from_name('vadeledav')
+	requester.get_user_from_id(player_id="268172")
+	requester.get_user_from_name(player_name="vadeledav")
+	requester.get_search_user_by_name(player_name="vadeledav")
+	requester.get_user_steam_account(player_id=76561198403360223)
+	requester.get_user_platform_id(player_id=268172)
+	requester.get_user_stats(player_id="268172")
+	requester.get_user_count()
 
-    print(f"Galactifer attacked on {attack[0].timestamp_to_datetime():%d/%m/%Y at %H:%M:%S}")
 except APIErrorException as e:
-    print(e.api_error)
+	print(e.api_error)
 ```
 
