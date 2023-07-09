@@ -9,6 +9,6 @@ class LeaderboardXpFromAttackPlayerDTO(DTO):
 
 	Level: int
 	Experience: int
-	Id: int
+	Id: str
 	Name: str
 	Avatar: str

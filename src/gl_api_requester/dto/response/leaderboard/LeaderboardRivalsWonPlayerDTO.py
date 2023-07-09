@@ -8,6 +8,6 @@ class LeaderboardRivalsWonPlayerDTO(DTO):
 	"""
 
 	RivalsWon: int
-	Id: int
+	Id: str
 	Name: str
 	Avatar: str

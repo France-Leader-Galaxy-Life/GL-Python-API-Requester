@@ -8,7 +8,7 @@ class LeaderboardWarpointsPlayerDTO(DTO):
 	"""
 
 	Warpoints: int
-	AllianceName: int
-	Id: int
+	AllianceName: str
+	Id: str
 	Name: str
 	Avatar: str

@@ -14,5 +14,5 @@ class PlayerDTO(DTO):
 	Avatar: str
 	Level: int
 	Experience: int
-	AllianceId: str
+	AllianceId: str|None
 	Planets: List[PlanetDTO]
