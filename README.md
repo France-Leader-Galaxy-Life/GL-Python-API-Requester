@@ -1,3 +1,9 @@
+# Galaxy Life Python Api Requester
+
+A simple pip package to make request on the Galaxy Life game API.
+
+![Tests](https://github.com/France-Leader-Galaxy-Life/GL-Python-API-Requester/actions/workflows/tests.yml/badge.svg)
+
 # Installation
 
 ```
@@ -28,7 +34,6 @@ try:
 	# Users request
 	requester.get_user_from_name('vadeledav')
 	requester.get_user_from_id(player_id="268172")
-	requester.get_user_from_name(player_name="vadeledav")
 	requester.get_search_user_by_name(player_name="vadeledav")
 	requester.get_user_steam_account(player_id=76561198403360223)
 	requester.get_user_platform_id(player_id=268172)
