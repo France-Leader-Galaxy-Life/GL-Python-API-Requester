@@ -53,7 +53,7 @@ def test_get_user_from_name_FAILED(api_requester):
 
 
 def test_get_user_from_id_PASSED(api_requester):
-	response = api_requester.get_user_from_id(player_id=55555555)
+	response = api_requester.get_user_from_id(player_id=268172)
 	assert response is not None
 
 def test_get_user_from_id_FAILED(api_requester):
