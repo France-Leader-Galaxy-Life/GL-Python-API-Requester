@@ -115,7 +115,7 @@ class GLAPIRequester:
 	# Private methods #
 	###################
 
-	def __send_request(self, endpoint: str) -> Any:
+	def __send_request(self, endpoint: str) -> Dict:
 		
 		# Send the request
 		response = requests.get(self.uri+endpoint)
