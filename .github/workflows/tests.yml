@@ -23,5 +23,6 @@ jobs:
         python -m pip install --upgrade pip
         pip install tox tox-gh-actions
         pip install gl-api-requester
+        python3 -m pip install types-requests
     - name: Test with tox
       run: tox
