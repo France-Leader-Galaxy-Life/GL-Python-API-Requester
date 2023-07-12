@@ -1,11 +1,11 @@
-from typing import Dict
+from typing import Dict, Any
 
 class APIErrorException(Exception):
 	"""
 	Exception thrown when an API error occurs.
 	"""
 
-	def __init__(self, message: str, api_error: Dict) -> None:
+	def __init__(self, message: str, api_error: Any) -> None:
 		"""
 		Parameters
 		----------
@@ -17,7 +17,7 @@ class APIErrorException(Exception):
 		super().__init__(message)
 		self.api_error = api_error
 
-	def get_api_error(self) -> Dict:
+	def get_api_error(self) -> Any:
 		"""
 		Returns the API error message.
 		"""

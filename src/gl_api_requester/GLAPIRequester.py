@@ -1,4 +1,4 @@
-from typing import Dict, List
+from typing import Dict, List, Any
 from dacite import from_dict
 import json
 import requests
@@ -101,29 +101,28 @@ class GLAPIRequester:
 	def get_user_steam_account(self, player_id: GetPlayerByIdDTO) -> PlayerDTO:
 		return from_dict(PlayerDTO, self.__send_request(f"/Users/steam?steamId={player_id}"))
 
-	def get_user_platform_id(self, player_id: GetPlayerByIdDTO) -> int:
-		return int(self.__send_request(f"/Users/platformId?userId={player_id}"))
+	def get_user_platform_id(self, player_id: GetPlayerByIdDTO) -> Any:
+		return self.__send_request(f"/Users/platformId?userId={player_id}")
 
 	def get_user_stats(self, player_id: GetPlayerByIdDTO) -> PlayerStatsDTO:
 		return from_dict(PlayerStatsDTO, self.__send_request(f"/Users/stats?id={player_id}"))
 
-	def get_user_count(self) -> int:
-		return int(self.__send_request(f"/Users/count"))
+	def get_user_count(self) -> Any:
+		return self.__send_request(f"/Users/count")
 		
 
 	###################
 	# Private methods #
 	###################
 
-	def __send_request(self, endpoint: str) -> Dict:
+	def __send_request(self, endpoint: str) -> Any:
 		
 		# Send the request
 		response = requests.get(self.uri+endpoint)
 		if response.status_code >= 400:
-			raise APIErrorException("An API error occured : "+response.text, response)
+			raise APIErrorException("An API error occured : "+response.text, response.text)
 
 		try:
 			return response.json()
 		except:
-			raise APIErrorException("An API error occured : "+response.text, response)
-			
+			raise APIErrorException("An API error occured : "+response.text, response.text)
