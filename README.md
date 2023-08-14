@@ -16,7 +16,7 @@ pip install gl-api-requester
 from gl_api_requester import *
 
 try:
-	api_requester = GLAPIRequester()
+	requester = GLAPIRequester()
 
 	# Alliance request
 	requester.get_alliance(name="France Leader")
