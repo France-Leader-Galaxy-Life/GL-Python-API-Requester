@@ -2,4 +2,10 @@ main.py
 /dist
 /src/gl_api_requester.egg-info
 .coverage
-/.my_py_cache
+/.mypy_cache
+
+myenv/
+
+*.pyc
+
+__pycache__/
